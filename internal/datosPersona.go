@@ -2,9 +2,10 @@ package internal
 
 import (
 	"fmt"
-	"github.com/go-playground/validator"
 	"regexp"
 	"strings"
+
+	"github.com/go-playground/validator"
 )
 
 func readNombre(texto string) string {
@@ -22,7 +23,7 @@ func readNombre(texto string) string {
 			} else {
 				break
 			}
-		} else if texto == "DNI: " && validarDocumento(nom) == false {
+		} else if texto == "DNI: " && !validarDocumento(nom) {
 			fmt.Println("Insert a valid DNI")
 		} else {
 			break
